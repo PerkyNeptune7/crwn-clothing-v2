@@ -1,6 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
 import './index.scss';
 import App from './App';
 import { Provider } from 'react-redux';
@@ -9,15 +9,16 @@ import { Elements } from '@stripe/react-stripe-js';
 import { stripePromise } from './utils/stripe/stripe.utils';
 
 const rootElement = document.getElementById('root');
-render(
+const root = ReactDOM.createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-      <Elements stripe={stripePromise}>
+        <Elements stripe={stripePromise}>
           <App />
         </Elements>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>,
-  rootElement
+  </React.StrictMode>
 );
