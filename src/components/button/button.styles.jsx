@@ -6,7 +6,7 @@ export const BaseButton = styled.button`
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 0 35px;
   font-size: 15px;
   background-color: black;
   color: white;
@@ -17,12 +17,10 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
-  &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-  }
+  align-items: center; /* Center text vertically */
+  text-align: center; /* Center text horizontally */
+  overflow: hidden; /* Hide overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
 `;
 
 export const GoogleSignInButton = styled(BaseButton)`
